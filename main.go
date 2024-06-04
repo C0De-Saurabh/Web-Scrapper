@@ -1,41 +1,39 @@
 package main
 
 import (
-	"io"
-	"net/http"
-	"os"
+    "fmt"
+    "net/http"
+    "github.com/PuerkitoBio/goquery"
 )
 
-func fetchData (url string) ([]byte,error){
+func main() {
+    url := "https://www.scrapingcourse.com/ecommerce/"
+    resp, err := http.Get(url)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer resp.Body.Close()
 
-	resp,err := http.Get(url)
-
-	if err != nil {
-		return nil, err
-	}
-
-	defer resp.Body.Close()
-
-	result, err := io.ReadAll(resp.Body)
-
-	return result, err
-
-}
-
-func main(){
-	result, err := fetchData("https://flipkart.com/api/v1/products")
-
-    if err!= nil {
-        panic(err)
+    if resp.StatusCode != 200 {
+        fmt.Printf("Status code error: %d %s\n", resp.StatusCode, resp.Status)
+        return
     }
 
-    outFile, err := os.Create("output.txt")
+    doc, err := goquery.NewDocumentFromReader(resp.Body)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
 
-	if err != nil {
-		panic(err)
-	}
-
-	os.WriteFile(outFile.Name(), result, 0644)
-
-
+    doc.Find("li.product").Each(func(index int, item *goquery.Selection) {
+        
+		title := item.Find("h2.woocommerce-loop-product__title").Text()
+		imgSrc, exists := item.Find("img").Attr("src")
+        if !exists {
+            imgSrc = "No image URL found"
+        }
+        fmt.Printf("Product %d: %s\n", index+1, title)
+		fmt.Printf("Image URL: %s\n", imgSrc)
+    })
 }
