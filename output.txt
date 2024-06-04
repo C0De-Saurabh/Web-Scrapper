@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><link href="Asset/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Asset/Scripts/jquery-2.0.3.min.js"></script>
+    <script src="Asset/Scripts/bootstrap.min.js"></script>
+
+    <link href="/Asset/Content/Loginstyle.css" rel='stylesheet' type='text/css' />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfonts-->
+	
+    <link href="Asset/Content/fonts-googleapis.css" rel="stylesheet" />
+<!--//webfonts-->
+    <title>
+	Login Page | Admin Panel
+</title><meta http-equiv="Expires" content="-1" />
+    <style>
+    .h2 {
+    margin-top:0; margin-bottom:0;
+    }
+        .h2 h2 {
+        font-size:20px;
+        }
+    .control-label {
+    font-size:14px !important;
+    }
+    .form-control {
+    border:1px solid #ccc !important;
+    padding-left:15px !important;
+    }
+    .modal-dialog {
+    margin-top:100px;
+    }
+    .validateerror {
+    font-size:11px;
+    }
+</style>
+     <script src="Asset/Scripts/googleapis.js"></script>
+</head>
+<body>
+<form method="post" action="./UserLogin.aspx?returnPath=%2fStudentPortal%2fStudentResult.aspx" id="form1">
+<input type="hidden" name="ToolkitScriptManager1_HiddenField" id="ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="XTJ+1Xiz/Vwb+XX/DfMcbytogNzot8/O2wjl1whCDBAI15lNMOk1FjIheEh4g1+qUExIh5rV4YfovDpY8pmDO3fHolvWv9WFBJdD3oQ7ox4=" />
+
+
+<script src="/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LfRYj3RF03DZaSGyPS2WiGgKaqzoICaSnMjBCQE3bIbWE_Zs74Cvm0TMrWTtEnTmWdsUKP8WdbVwTC6idRqm1POGa4D4q_hYHeUgCH1MFKCE0&amp;t=ffffffffec54f2d7" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=tUs9KHah7tF4UdNQrWivbSyEnQUq5weP4_UwFbPBAkUki9r8Z5NSJ7Uf4R4L6Peva4VyyvffZ6UjGqndzg-_qI3ay4Ag2-Rv-3p9qP1FT6JHbLG_MEOdOZ_UpQ0yJrR24gBMJst0vO4tRsIuDLYjfg2&amp;t=2265eaa7" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScLqeJ57KHK-oh6q5ZFR0Fm9RE9D2RzarARZnQIeRMTWLcOI19Oj5AJDfwv46YgiVCHTN8KQxfA6K8loLgsCxkQoFJg1Wi1_tsH15NY-0IwUT0&amp;t=ffffffffec54f2d7" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7A1355CA" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="FQrhQPOWg5dqhwsjvPkMYkOEyKCgHBCBUgcC48D6Uzovlk/eSNGrWNZuiuUwMuyRLguSOMpAD0jDu5Q6BDaLyVw7uhoqu5s0lvGy006R39IwuOuS0RdTkZOisjSoGSPp5mT3B4Es5BCyjQNRJ2+ZYaVWGE1ZqkG4vKk6gouNAranpjej170z+RJkH8gaAlsOkdTe+Z0Phchk4C/LOC4rMp2Kb4OJ/pG9huykU/2+T1IYwO5bn9QkWGBdp9Qv1zaU" />
+    
+    <!--/start-login-one-->
+		<div class="login">	
+        <div class="ribbon-wrapper h2 ribbon-red">
+				<div class="ribbon-front">
+					<h2>Login Panel</h2>
+				</div>
+				<div class="ribbon-edge-topleft2"></div>
+				<div class="ribbon-edge-bottomleft"></div>           
+		</div>
+        <div style ="text-align:center;"><img src="image/LogoImage.PNG" alt="Logo" height ="80px" style="padding :2px;"/>
+        <h2 style ="font-weight :bold; color :#3399ff">MAULANA AZAD NATIONAL INSTITUTE OF TECHNOLOGY, BHOPAL</h2>
+        </div>      <br />  
+            <ul>
+					<li>
+                        <input name="txtusername" type="text" id="txtusername" tabindex="1" required="required" class="text" value="Enter Login ID" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Login Id&#39;;}" /><a href="#" class=" icon user"></a>
+					</li>
+					<li>
+                        <input name="txtpwd" type="password" id="txtpwd" tabindex="2" required="required" value="Password" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Password&#39;;}" /><a href="#" class=" icon lock"></a>
+					</li>
+				</ul>
+            <div class="submit">
+				<input type="submit" name="btnsubmit" value="Submit" id="btnsubmit" tabindex="3" />
+			</div>
+            <div style ="text-align:center; height :30px; padding : 0 5px 0 5px;">
+            
+                 &nbsp;&nbsp;
+                <a href="#" class="btn btn-link" data-toggle="modal" data-target="#myModal">Student Sign Up!</a>
+                &nbsp;&nbsp;&nbsp;            
+                
+                 &nbsp;&nbsp;&nbsp;
+               
+                     
+            </div>
+            <div style ="text-align:center; height :30px; padding : 0 5px 0 5px;"><marquee><h2 style ="font-size :small; line-height :30px;">MAULANA AZAD NATIONAL INSTITUTE OF TECHNOLOGY, BHOPAL</h2></marquee></div>
+            </div>
+            <span id="lblmsg"></span>
+
+  <!------ Modal ------>     
+  <div id="myModal" class="modal fade" role="dialog">
+     <div id="UpdatePanel6">
+	
+  <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content form-horizontal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title" style="font-size:28px;font-weight:bold">New Student Sign Up!</h2>
+      </div>
+        
+      <div class="modal-body">
+        
+          <div class="form-group">
+             <label class="col-md-4 control-label"> Enter Scholar No</label>
+              <div class="col-md-8">
+                  <input name="tbxScholarNo" type="text" id="tbxScholarNo" class="form-control" />
+                           
+              </div>
+          </div>
+            <div class="form-group">
+             <label class="col-md-4 control-label"> Enter Password</label>
+              <div class="col-md-8">
+                  <input name="tbxPassword" type="password" id="tbxPassword" class="form-control" />
+                           
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-md-4 control-label"> Re enter password</label>
+              <div class="col-md-8">
+                  <input name="tbxConfirmPassword" type="password" id="tbxConfirmPassword" class="form-control" />
+                         
+                        
+              </div>
+          </div>         
+          <div class="form-group text-center">
+           <div id="dvgmsg" style="color:red;font-weight:bolder;"></div>
+              </div>
+      </div>
+                        
+      <div class="modal-footer">
+           <input type="submit" name="btnVerify" value="Verify" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnVerify&quot;, &quot;&quot;, true, &quot;reggroup&quot;, &quot;&quot;, false, false))" id="btnVerify" class="btn btn-primary" />
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div
+  </div>
+                           
+</div>
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ToolkitScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+</form>
+</body>
+</html>

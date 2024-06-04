@@ -23,7 +23,7 @@ func fetchData (url string) ([]byte,error){
 }
 
 func main(){
-	result, err := fetchData("http://www.google.com")
+	result, err := fetchData("https://flipkart.com/api/v1/products")
 
     if err!= nil {
         panic(err)
@@ -34,6 +34,8 @@ func main(){
 	if err != nil {
 		panic(err)
 	}
+
+	os.WriteFile(outFile.Name(), result, 0644)
 
 
 }
