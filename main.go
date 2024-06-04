@@ -4,6 +4,9 @@ import (
     "fmt"
     "net/http"
     "github.com/PuerkitoBio/goquery"
+	"os"
+	"encoding/csv"
+	"log"
 )
 
 func main() {
@@ -26,6 +29,21 @@ func main() {
         return
     }
 
+
+		// CSV file creation
+		file, err := os.Create("products.csv")
+		if err != nil {
+			log.Fatal("Unable to create file:", err)
+		}
+		defer file.Close()
+		
+		writer := csv.NewWriter(file)
+		defer writer.Flush()
+	
+		writer.Write([]string{"Product Title", "Image URL"})
+	
+		// Loop through the products
+
     doc.Find("li.product").Each(func(index int, item *goquery.Selection) {
         
 		title := item.Find("h2.woocommerce-loop-product__title").Text()
@@ -33,7 +51,18 @@ func main() {
         if !exists {
             imgSrc = "No image URL found"
         }
-        fmt.Printf("Product %d: %s\n", index+1, title)
-		fmt.Printf("Image URL: %s\n", imgSrc)
+        // fmt.Printf("Product %d: %s\n", index+1, title)
+		// fmt.Printf("Image URL: %s\n", imgSrc)
+
+		//Writing data in csv
+
+		err := writer.Write([]string{title, imgSrc})
+        if err != nil {
+            log.Fatal("Unable to write record to file:", err)
+        }
+
     })
+  
+	fmt.Println("Scraping completed and data saved in products.csv file")
+
 }
